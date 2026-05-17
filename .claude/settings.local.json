@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm src/components/ExamsSection.tsx)",
+      "Bash(rm src/assets/red-phone.png)",
+      "Bash(rm src/assets/big-ben.png)",
+      "Bash(rm:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4173/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4173/ruta-inexistente)",
+      "Bash(kill %1)"
+    ]
+  }
+}
