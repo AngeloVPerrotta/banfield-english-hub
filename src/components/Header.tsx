@@ -11,12 +11,12 @@ export default function Header() {
   const { t, lang, setLang } = useLanguage();
 
   const navLinks = [
-    { label: t("nav.inicio"), href: "#inicio" },
-    { label: t("nav.cursos"), href: "#cursos" },
-    { label: t("nav.horarios"), href: "#horarios" },
-    { label: t("nav.campus"), href: "#campus" },
-    { label: t("nav.novedades"), href: "#novedades" },
-    { label: t("nav.contacto"), href: "#contacto" },
+    { label: t("nav.inicio"), href: "/#inicio" },
+    { label: t("nav.cursos"), href: "/#cursos" },
+    { label: t("nav.horarios"), href: "/#horarios" },
+    { label: t("nav.campus"), href: "/#campus" },
+    { label: t("nav.novedades"), href: "/#novedades" },
+    { label: t("nav.contacto"), href: "/#contacto" },
   ];
 
   const LangToggle = () => (
@@ -68,7 +68,7 @@ export default function Header() {
       {/* Main nav */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b shadow-sm">
         <div className="container flex items-center justify-between py-3">
-          <a href="#inicio" className="flex-shrink-0">
+          <a href="/" className="flex-shrink-0">
             <img
               src={images.logo}
               alt="Cultural Inglesa de Banfield"

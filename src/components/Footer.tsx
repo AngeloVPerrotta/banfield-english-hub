@@ -6,12 +6,12 @@ export default function Footer() {
   const { t } = useLanguage();
 
   const navLinks = [
-    { label: t("nav.inicio"), href: "#inicio" },
-    { label: t("nav.cursos"), href: "#cursos" },
-    { label: t("nav.horarios"), href: "#horarios" },
-    { label: t("nav.campus"), href: "#campus" },
-    { label: t("nav.novedades"), href: "#novedades" },
-    { label: t("nav.contacto"), href: "#contacto" },
+    { label: t("nav.inicio"), href: "/#inicio" },
+    { label: t("nav.cursos"), href: "/#cursos" },
+    { label: t("nav.horarios"), href: "/#horarios" },
+    { label: t("nav.campus"), href: "/#campus" },
+    { label: t("nav.novedades"), href: "/#novedades" },
+    { label: t("nav.contacto"), href: "/#contacto" },
   ];
 
   const infoItems = [
