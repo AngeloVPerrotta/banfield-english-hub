@@ -16,7 +16,7 @@ const es = {
     contacto: "Contacto",
   },
   header: {
-    hours: "Lunes a Viernes · 14:30 a 21:00 hs",
+    hours: "Lunes a jueves: 14:30 a 21:00 hs · Viernes: 16:30 a 20:30 hs · Sábados: 9:30 a 13:30 hs",
     cta: "Inscribite 2026",
   },
   hero: {
@@ -114,7 +114,7 @@ const es = {
     email_label: "Email",
     email: "info@culturaldebanfield.com.ar",
     hours_label: "Horario de atención",
-    hours: "Lunes a Viernes de 14:30 a 21:00 hs",
+    hours: "Lunes a jueves: 14:30 a 21:00 hs · Viernes: 16:30 a 20:30 hs · Sábados: 9:30 a 13:30 hs",
     whatsapp_cta: "Escribinos por WhatsApp",
     link_inscripciones: "Inscripciones 2026",
     link_campus: "Campus Nube",
@@ -129,7 +129,7 @@ const es = {
     phone: "4202-3595",
     whatsapp: "(+549) 11 3669-3725",
     email: "info@culturaldebanfield.com.ar",
-    hours: "Lunes a Viernes · 14:30 a 21:00 hs",
+    hours: "Lunes a jueves: 14:30 a 21:00 hs · Viernes: 16:30 a 20:30 hs · Sábados: 9:30 a 13:30 hs",
     address: "Maipú 387, Banfield, Buenos Aires",
     maps_link: "Ver en Google Maps",
     copyright:
@@ -147,7 +147,7 @@ const en: typeof es = {
     contacto: "Contact",
   },
   header: {
-    hours: "Mon–Fri · 2:30 PM to 9:00 PM",
+    hours: "Monday to Thursday: 2:30 PM to 9:00 PM · Friday: 4:30 PM to 8:30 PM · Saturday: 9:30 AM to 1:30 PM",
     cta: "Enrol 2026",
   },
   hero: {
@@ -246,7 +246,7 @@ const en: typeof es = {
     email_label: "Email",
     email: "info@culturaldebanfield.com.ar",
     hours_label: "Office hours",
-    hours: "Mon–Fri, 2:30 PM to 9:00 PM",
+    hours: "Monday to Thursday: 2:30 PM to 9:00 PM · Friday: 4:30 PM to 8:30 PM · Saturday: 9:30 AM to 1:30 PM",
     whatsapp_cta: "Message us on WhatsApp",
     link_inscripciones: "Enrolment 2026",
     link_campus: "Campus Nube",
@@ -261,7 +261,7 @@ const en: typeof es = {
     phone: "4202-3595",
     whatsapp: "(+549) 11 3669-3725",
     email: "info@culturaldebanfield.com.ar",
-    hours: "Mon–Fri · 2:30 PM to 9:00 PM",
+    hours: "Monday to Thursday: 2:30 PM to 9:00 PM · Friday: 4:30 PM to 8:30 PM · Saturday: 9:30 AM to 1:30 PM",
     address: "Maipú 387, Banfield, Buenos Aires",
     maps_link: "View on Google Maps",
     copyright:
