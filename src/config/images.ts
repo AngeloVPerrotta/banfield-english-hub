@@ -66,6 +66,7 @@ export const images = {
     inscripciones: popupInscripciones,
   },
   novedades: {
+    junio: [popupInscripciones],
     marzo: [
       { src: marzo1, alt: 'Inscripción abierta marzo 2026' },
       { src: marzo2, alt: 'Reservá tu lugar - inscripciones' },

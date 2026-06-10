@@ -12,6 +12,16 @@ type MonthData = {
 
 const novedadesData: MonthData[] = [
   {
+    mes: "Junio 2026",
+    mesEn: "June 2026",
+    imagenes: [
+      {
+        src: images.novedades.junio[0],
+        alt: "Inscripciones abiertas Elementary para adultos - Agosto 2026",
+      },
+    ],
+  },
+  {
     mes: "Abril 2026",
     mesEn: "April 2026",
     imagenes: images.novedades.abril,
@@ -62,6 +72,7 @@ function MonthCarousel({ month }: { month: MonthData }) {
   );
 
   const title = lang === "es" ? month.mes : month.mesEn;
+  const hasMultiple = month.imagenes.length > 1;
 
   return (
     <div className="reveal">
@@ -69,22 +80,26 @@ function MonthCarousel({ month }: { month: MonthData }) {
 
       <div className="relative">
         {/* Arrows */}
-        <button
-          onClick={scrollPrev}
-          disabled={!canScrollPrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors disabled:opacity-30 disabled:pointer-events-none"
-          aria-label="Anterior"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <button
-          onClick={scrollNext}
-          disabled={!canScrollNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors disabled:opacity-30 disabled:pointer-events-none"
-          aria-label="Siguiente"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
+        {hasMultiple && (
+          <>
+            <button
+              onClick={scrollPrev}
+              disabled={!canScrollPrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors disabled:opacity-30 disabled:pointer-events-none"
+              aria-label="Anterior"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={scrollNext}
+              disabled={!canScrollNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors disabled:opacity-30 disabled:pointer-events-none"
+              aria-label="Siguiente"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </>
+        )}
 
         {/* Carousel viewport */}
         <div className="overflow-hidden" ref={emblaRef}>
