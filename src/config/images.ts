@@ -16,7 +16,7 @@ import gallery5Img from '@/assets/gallery-5.jpg';
 import gallery6Img from '@/assets/gallery-6.jpg';
 
 // Pop-up
-import popupViajeros from '@/assets/popup-viajeros.png';
+import popupInscripciones from '@/assets/popup-inscripciones.jpg';
 
 // Marzo
 import marzo1 from '@/assets/marzo-1.jpg';
@@ -63,7 +63,7 @@ export const images = {
     { src: gallery6Img, alt: 'Presentaciones grupales' },
   ],
   popup: {
-    viajeros: popupViajeros,
+    inscripciones: popupInscripciones,
   },
   novedades: {
     marzo: [

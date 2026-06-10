@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
 import { images } from "@/config/images";
 
 const SESSION_KEY = "cib_popup_shown";
+const WHATSAPP_URL =
+  "https://wa.me/5491136693725?text=Hola!%20Me%20interesa%20inscribirme%20en%20el%20curso%20Elementary%20para%20adultos";
 
 export default function WelcomePopup() {
   const [visible, setVisible] = useState(false);
   const [animate, setAnimate] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (!sessionStorage.getItem(SESSION_KEY)) {
@@ -79,13 +79,13 @@ export default function WelcomePopup() {
           <button
             onClick={() => {
               close();
-              navigate("/viajeros");
+              window.open(WHATSAPP_URL, "_blank", "noopener,noreferrer");
             }}
             className="block cursor-pointer border-0 bg-transparent p-0"
           >
             <img
-              src={images.popup.viajeros}
-              alt="Inglés para Viajeros"
+              src={images.popup.inscripciones}
+              alt="Inscripciones abiertas"
               className="popup-img rounded-2xl shadow-2xl"
               draggable={false}
             />
