@@ -8,7 +8,7 @@ import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import WelcomePopup from "@/components/WelcomePopup";
+// import WelcomePopup from "@/components/WelcomePopup"; // desactivado — descomentar junto con el render
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Index = () => {
@@ -28,7 +28,8 @@ const Index = () => {
       </main>
       <Footer />
       <WhatsAppButton />
-      <WelcomePopup />
+      {/* Popup desactivado a pedido del cliente — descomentar para reactivar */}
+      {/* <WelcomePopup /> */}
     </div>
   );
 };
