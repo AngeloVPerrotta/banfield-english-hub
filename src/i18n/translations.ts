@@ -1,18 +1,12 @@
 export type Lang = "es" | "en";
 
-export type BlogPost = {
-  date: string;
-  title: string;
-  excerpt: string;
-};
-
 const es = {
   nav: {
     inicio: "Inicio",
     cursos: "Nuestros Cursos",
     horarios: "Horarios",
+    inscripcion: "Inscripción",
     campus: "Campus Nube",
-    novedades: "Novedades",
     contacto: "Contacto",
   },
   header: {
@@ -21,37 +15,153 @@ const es = {
   },
   hero: {
     badge: "Desde 1968 · Miembro fundador SEA",
-    title: "Aprendé inglés en tu instituto de siempre",
-    subtitle1: "Más de 58 años enseñando inglés en Banfield.",
-    subtitle2: "Recibimos a los hijos y nietos de nuestros primeros alumnos.",
+    title: "Calidad académica con trato personal",
+    subtitle:
+      "Grupos reducidos, docentes que te acompañan y la calidez de un instituto de barrio con más de 58 años en Banfield.",
     cta_primary: "Inscribite 2026",
     cta_secondary: "Hacé el test de nivelación",
   },
   about: {
     title: "Quiénes somos",
-    p1: "La Cultural Inglesa de Banfield nació en 1968 con una idea simple: enseñar inglés de verdad, en el barrio, para todos. Más de 58 años después, seguimos haciendo exactamente eso.",
-    p2: "Somos miembros fundadores de SEA, Asociación de Centros de Idiomas",
-    p3: "Hoy recibimos a los hijos y nietos de nuestros primeros alumnos. Ese es el mejor reconocimiento que podemos tener.",
+    p1: "La Cultural Inglesa de Banfield nació en 1968 con una idea simple: enseñar inglés de verdad, en el barrio, con la calidad de una gran institución y la calidez de conocer a cada alumno por su nombre. Más de 58 años después, seguimos haciendo exactamente eso, ahora en aulas más modernas y con la tecnología que la enseñanza de hoy requiere.",
+    p2: "La calidez también está en los detalles. Nuestras aulas son cómodas y climatizadas, y están equipadas con computadoras y pantallas interactivas que suman a la dinámica de cada clase. Un ambiente cuidado, donde los grupos reducidos permiten que nadie quede atrás.",
+    sea: "Somos miembros fundadores de SEA, Asociación de Centros de Idiomas",
   },
   courses: {
     title: "Nuestros Cursos",
-    subtitle: "Inglés para todas las edades y niveles · Clases 2026",
-    cta: "Inscripciones abiertas 2026",
-    ninos_title: "Niños (4–5 años)",
-    ninos_desc:
-      "Los primeros pasos en inglés, con canciones, juegos y mucho movimiento. Un espacio donde aprender es divertirse.",
-    adolescentes_title: "Adolescentes",
-    adolescentes_desc:
-      "Clases dinámicas que acompañan el ritmo del secundario y preparan para certificaciones internacionales.",
-    adultos_title: "Adultos",
-    adultos_desc:
-      "Horarios flexibles para que el inglés encaje en tu vida, no al revés. Desde nivel básico hasta avanzado.",
-    talleres_title: "Talleres de Conversación",
-    talleres_desc:
-      "Para los que quieren ganar fluidez y confianza al hablar. Práctica oral en grupos pequeños.",
-    personalizados_title: "Clases Particulares",
-    personalizados_desc:
-      "Tu ritmo, tus objetivos, tu horario. Clases individuales o en grupos reducidos, a medida.",
+    subtitle: "Inglés y portugués para todas las edades y niveles · Clases 2026",
+    group_english: "Cursos de inglés",
+    group_portuguese: "Cursos de portugués",
+    kinder: {
+      name: "Kinder",
+      brief: "El primer encuentro con el inglés",
+      description: [
+        "La aproximación inicial a una lengua extranjera define la relación que el alumno construirá con ella durante el resto de su formación. Nuestro curso de Kinder propone un abordaje del inglés a través de la exploración —canciones, cuentos, recursos audiovisuales y actividades lúdicas seleccionadas conforme al estadio evolutivo de cada grupo—, con el objetivo de que la lengua se incorpore de manera natural y significativa, sin la exigencia formal propia de etapas posteriores.",
+      ],
+      diffs_title: "Qué distingue a nuestro curso de Kinder",
+      diffs: [
+        "Dos docentes por curso. El acompañamiento resulta determinante en esta etapa: la presencia de dos profesoras permite un seguimiento individual efectivo dentro del grupo.",
+        "Grupos reducidos. Cada alumno cuenta con espacio real de participación y atención personalizada.",
+        "Metodología lúdica con fundamento pedagógico. El juego no es un complemento, sino el vehículo mismo del aprendizaje a los 4 y 5 años.",
+        "Aulas digitalizadas. Recursos audiovisuales integrados a la dinámica de la clase.",
+        "Campus virtual para alumnos y familias. Consulta de calificaciones, boletines y asistencias, y acceso a material de estudio complementario.",
+        "Intervalo para la merienda. Una instancia que favorece la socialización y la convivencia del grupo.",
+        "Sin matrícula. El ciclo se abona exclusivamente por cuota mensual.",
+      ],
+      facts:
+        "Alumnos de 4 y 5 años · Viernes de 18 a 19:30 hs · Ciclo lectivo de abril a noviembre · Modalidad 100% presencial",
+      cta: "Reservá la vacante de tu hijo",
+    },
+    ninos: {
+      name: "Niños",
+      brief: "Del juego a la construcción sistemática del idioma",
+      description: [
+        "Entre los 6 y los 11 años, el alumno consolida su alfabetización en la lengua materna y adquiere una notable plasticidad para incorporar una segunda lengua. Nuestro curso de Niños aprovecha esa ventana con un programa de dos encuentros semanales y un enfoque centrado en la comunicación oral: el objetivo es que el alumno hable en inglés desde la primera clase, en un entorno dinámico donde el error forma parte natural del proceso de aprendizaje.",
+      ],
+      diffs_title: "Qué distingue a nuestro curso de Niños",
+      diffs: [
+        "Enfoque en la comunicación oral. Clases dinámicas orientadas a que el alumno produzca lengua, no solamente la reciba.",
+        "Dos clases semanales de una hora. Una frecuencia que sostiene el contacto con el idioma y consolida lo aprendido.",
+        "Clases de apoyo optativas sin costo adicional. Un refuerzo disponible para todo alumno que lo necesite, sin cargo alguno.",
+        "Exámenes finales bonificados. La evaluación final está incluida en el arancel del curso.",
+        "Grupos reducidos. Participación efectiva y seguimiento personalizado de cada alumno.",
+        "Aulas digitalizadas. Recursos audiovisuales integrados a la dinámica de la clase.",
+        "Campus virtual para alumnos y familias. Consulta de calificaciones, boletines y asistencias, y acceso a material de estudio complementario.",
+        "Test de nivelación sin cargo. Para quienes ya tienen conocimientos previos, determinamos el nivel exacto de ingreso sin costo.",
+        "Preparación para exámenes internacionales. Disponible de manera opcional como curso complementario arancelado.",
+      ],
+      facts:
+        "Alumnos de 6 a 11 años · Dos clases semanales de 1 hora · Ciclo lectivo de marzo a diciembre · Modalidad 100% presencial · Matrícula anual",
+      cta: "Consultá horarios y vacantes",
+    },
+    adolescentes: {
+      name: "Adolescentes",
+      brief: "El nivel donde el inglés deja de ser una materia y se vuelve una herramienta",
+      description: [
+        "Entre los 12 y los 17 años el inglés adquiere una dimensión distinta: acompaña el rendimiento escolar, abre el acceso a las certificaciones internacionales y comienza a proyectarse sobre las decisiones académicas y profesionales que el alumno tomará al finalizar el secundario. Nuestro curso de Adolescentes sostiene una exigencia acorde a esa etapa, con clases dinámicas centradas en la comunicación oral y un programa que se extiende más allá del aula.",
+      ],
+      diffs_title: "Qué distingue a nuestro curso de Adolescentes",
+      diffs: [
+        "Viajes de estudio a Inglaterra. Una experiencia de inmersión en el país de origen del idioma, que trasciende ampliamente el marco de una cursada convencional.",
+        "Actividades extracurriculares. Instancias que refuerzan el uso real del idioma y consolidan el vínculo del alumno con la institución.",
+        "Enfoque en la comunicación oral. El alumno desarrolla fluidez y confianza para expresarse, no solamente competencia gramatical.",
+        "Dos clases semanales de una hora y media. Carga horaria adecuada a un progreso sostenido y verificable.",
+        "Clases de apoyo optativas sin costo adicional. Un respaldo académico disponible en los momentos de mayor exigencia escolar.",
+        "Exámenes finales bonificados. La evaluación final está incluida en el arancel del curso.",
+        "Grupos reducidos. Seguimiento personalizado del recorrido de cada alumno.",
+        "Aulas digitalizadas y campus virtual. Alumnos y familias consultan calificaciones, boletines y asistencias, y acceden a material de estudio complementario.",
+        "Test de nivelación sin cargo. Determinamos con precisión el nivel de ingreso, sin costo.",
+        "Preparación para exámenes internacionales. Disponible de manera opcional como curso complementario arancelado.",
+      ],
+      facts:
+        "Alumnos de 12 a 17 años · Dos clases semanales de 1:30 h · Ciclo lectivo de marzo a diciembre · Modalidad 100% presencial · Matrícula anual",
+      cta: "Pedí información del curso",
+    },
+    adultos: {
+      name: "Adultos",
+      brief: "Un plan de estudios con plazos definidos y certificación en cada etapa",
+      description: [
+        "El adulto que decide estudiar inglés necesita algo más que buenas clases: necesita previsibilidad. Nuestro programa para adultos está organizado en diez niveles de cinco meses cada uno, con dos inicios anuales —marzo y agosto— y certificación del nivel alcanzado al completar cada instancia. El alumno sabe desde el primer día cuánto dura su recorrido, qué acredita al finalizar cada etapa y en qué plazo puede alcanzar el dominio del idioma.",
+        "La propuesta pedagógica prioriza la expresión oral y la comprensión auditiva, las dos competencias que efectivamente resuelven una entrevista laboral, una reunión de trabajo o un viaje al exterior.",
+      ],
+      diffs_title: "Qué distingue a nuestro curso de Adultos",
+      diffs: [
+        "Un nivel cada cinco meses. Programa intensivo con objetivos claros y progreso verificable, sobre un total de diez niveles.",
+        "Dos inicios por año. Los cursos comienzan en marzo y en agosto, sin necesidad de esperar el inicio del ciclo lectivo.",
+        "Certificación del nivel alcanzado. Al completar cada nivel se rinde un examen final, sin costo adicional, y se certifica el nivel obtenido.",
+        "Talleres de conversación gratuitos. Disponible para todos los niveles, como complemento del trabajo de aula.",
+        "Modalidad presencial u online. Clases presenciales por la tarde a partir de las 19 hs, virtuales por la mañana, y sábados en ambas modalidades.",
+        "Grupos reducidos. Cada alumno dispone de tiempo real de práctica oral en clase.",
+        "Enfoque en oralidad y comprensión auditiva. Las competencias con aplicación inmediata en el ámbito laboral y personal.",
+        "Test de nivelación online sin cargo. Para quienes cuentan con conocimientos previos. Sin experiencia previa, el ingreso corresponde al nivel Elementary A.",
+        "Matrícula única anual. Quienes cursan dos niveles en el mismo año abonan la matrícula una sola vez.",
+      ],
+      facts:
+        "10 niveles · Dos clases semanales de 1:30 h · Inicios en marzo y agosto · Modalidad presencial u online",
+      cta: "Hacé tu test de nivelación gratis",
+    },
+    pt_adultos: {
+      name: "Portugués para adultos",
+      brief: "Un programa de 6 niveles, con certificación en cada etapa",
+      description: [
+        "Brasil es nuestro principal socio comercial y uno de los destinos más elegidos por los argentinos. Sin embargo, buena parte de quienes viajan o trabajan con el país se manejan con el portuñol. Aprender portugués de manera sistemática es más accesible de lo que suele creerse —la proximidad con el español representa una ventaja considerable desde el inicio— y el dominio real del idioma marca una diferencia concreta en el ámbito laboral, académico y personal.",
+        "Nuestro programa está organizado en 6 niveles de 5 meses cada uno, con una metodología centrada en la comunicación oral: la misma que aplicamos en la enseñanza del inglés desde hace décadas.",
+      ],
+      diffs_title: "Qué incluye el curso",
+      diffs: [
+        "6 niveles de 5 meses. Un recorrido con duración definida y objetivos claros en cada etapa.",
+        "Dos inicios por año. Los cursos comienzan en marzo y en agosto, sin necesidad de esperar el inicio del ciclo lectivo.",
+        "Certificación del nivel alcanzado. Al completar cada nivel se rinde un examen final, sin costo adicional, y se certifica el nivel obtenido.",
+        "Matrícula única anual. Quienes cursan dos niveles en el mismo año abonan la matrícula una sola vez, lo que permite completar el programa en la mitad del tiempo sin duplicar ese gasto.",
+        "Grupos reducidos. Cada alumno dispone de tiempo real de práctica oral en clase.",
+        "Enfoque en la comunicación. Clases orientadas a que el alumno hable desde el comienzo, no solo a que comprenda.",
+        "Horario compatible con la jornada laboral. Un encuentro semanal de hora y media, los viernes a partir de las 19.",
+      ],
+      facts:
+        "6 niveles de 5 meses · Viernes de 19 a 20:30 hs · Inicios en marzo y agosto · Matrícula anual",
+      cta: "Consultá por el curso de portugués",
+    },
+    pt_adolescentes: {
+      name: "Portugués para adolescentes",
+      brief: "Un segundo idioma que abre oportunidades",
+      description: [
+        "A los 12 años el inglés ya constituye un requisito básico. El portugués, en cambio, sigue siendo un diferencial: facilita el acceso a intercambios estudiantiles, programas universitarios en Brasil y oportunidades laborales que valoran el manejo del idioma. A esta edad, además, la adquisición resulta notablemente más ágil que en etapas posteriores.",
+        "El curso está organizado en 6 niveles de 5 meses, con clases dinámicas centradas en la conversación. La proximidad con el español favorece un progreso rápido y visible, factor determinante para sostener la motivación en esta franja etaria.",
+      ],
+      diffs_title: "Qué incluye el curso",
+      diffs: [
+        "6 niveles de 5 meses. Un recorrido con duración definida y objetivos claros en cada etapa.",
+        "Dos inicios por año. Los cursos comienzan en marzo y en agosto.",
+        "Certificación del nivel alcanzado. Al completar cada nivel se rinde un examen final bonificado y se certifica el nivel obtenido.",
+        "Matrícula única anual. Quienes cursan dos niveles en el mismo año abonan la matrícula una sola vez, y pueden completar el programa en la mitad del tiempo.",
+        "Grupos reducidos. Participación efectiva y seguimiento personalizado de cada alumno.",
+        "Enfoque en la comunicación oral. El objetivo es que el alumno hable desde las primeras clases, con fluidez y sin temor al error.",
+        "Horario compatible con la actividad escolar. Un encuentro semanal los viernes, sin superposición con el colegio ni con las actividades del fin de semana.",
+      ],
+      facts:
+        "Alumnos de 12 a 17 años · 6 niveles de 5 meses · Viernes de 17:30 a 19 hs · Inicios en marzo y agosto · Matrícula anual",
+      cta: "Pedí información del curso",
+    },
   },
   schedule: {
     title: "Horarios 2026",
@@ -68,6 +178,25 @@ const es = {
     tab_adultos: "Adultos",
     tab_conversacion: "Conversación",
   },
+  enrollment: {
+    title: "Inscribirte es simple: cuatro pasos y empezás a cursar",
+    subtitle:
+      "Nuestro equipo administrativo te acompaña en cada instancia del proceso, desde la primera consulta hasta el inicio de clases.",
+    step1_title: "Escribinos por WhatsApp",
+    step1_desc:
+      "Contanos qué curso te interesa. Si ya tenés conocimientos previos de inglés, coordinamos el test de nivelación sin cargo para determinar con precisión tu nivel de ingreso.",
+    step2_title: "Recibís toda la información",
+    step2_desc:
+      "Te enviamos el detalle completo del curso: horarios disponibles, duración, aranceles y material de estudio, para que decidas con toda la información a la vista.",
+    step3_title: "Completás la ficha de inscripción",
+    step3_desc:
+      "Un formulario breve con los datos del alumno. Nuestro equipo te asiste en lo que necesites.",
+    step4_title: "Abonás la matrícula",
+    step4_desc:
+      "Se abona una sola vez al año, cuando corresponde según el curso. Con este paso, tu vacante queda confirmada.",
+    closing: "Y ya estás listo para comenzar tus clases.",
+    cta: "Consultá por WhatsApp",
+  },
   campus: {
     title: "Campus Nube",
     desc: "Campus Nube es la plataforma exclusiva para alumnos de la Cultural Inglesa de Banfield. Accedé a material didáctico, boletines y resultados de exámenes.",
@@ -77,32 +206,6 @@ const es = {
     cta: "Acceder al Campus",
     cta_sub: "Plataforma exclusiva para alumnos",
   },
-  blog: {
-    title: "Novedades",
-    subtitle: "Lo último de nuestra comunidad",
-    gallery_title: "Galería",
-    instagram_cta: "Seguinos en Instagram",
-  },
-  blog_posts: [
-    {
-      date: "Marzo 2026",
-      title: "¡Inscripciones abiertas 2026!",
-      excerpt:
-        "Ya podés inscribirte en todos nuestros cursos para niños, adolescentes y adultos. Consultá horarios y vacantes.",
-    },
-    {
-      date: "Febrero 2026",
-      title: "Nuevos horarios de conversación online",
-      excerpt:
-        "Sumamos clases de conversación los sábados por la mañana y los martes por la noche. Ideal para practicar desde casa.",
-    },
-    {
-      date: "Abril 2026",
-      title: "58 años formando generaciones",
-      excerpt:
-        "Desde 1968, la Cultural Inglesa de Banfield acompaña a familias enteras en su camino con el inglés. Hoy recibimos a los nietos de nuestros primeros alumnos.",
-    },
-  ] as BlogPost[],
   contact: {
     title: "Contactanos",
     subtitle: "¿Tenés alguna consulta? Estamos para ayudarte.",
@@ -132,6 +235,8 @@ const es = {
     hours: "Lunes a jueves: 14:30 a 21:00 hs · Viernes: 16:30 a 20:30 hs · Sábados: 9:30 a 13:30 hs",
     address: "Maipú 387, Banfield, Buenos Aires",
     maps_link: "Ver en Google Maps",
+    institutional:
+      "Cultural Inglesa de Banfield · Desde 1968 · Miembros de SEA (Asociación de Centros de Idiomas)",
     copyright:
       "© 2026 Cultural Inglesa de Banfield. Todos los derechos reservados.",
   },
@@ -142,8 +247,8 @@ const en: typeof es = {
     inicio: "Home",
     cursos: "Our Courses",
     horarios: "Schedule",
+    inscripcion: "Enrolment",
     campus: "Campus Nube",
-    novedades: "News",
     contacto: "Contact",
   },
   header: {
@@ -152,38 +257,153 @@ const en: typeof es = {
   },
   hero: {
     badge: "Since 1968 · Founding member of SEA",
-    title: "Learn English at your neighbourhood institute",
-    subtitle1: "Over 58 years teaching English in Banfield.",
-    subtitle2:
-      "We now teach the children and grandchildren of our first students.",
+    title: "Academic quality with a personal touch",
+    subtitle:
+      "Small groups, teachers who support you all the way, and the warmth of a neighbourhood institute with over 58 years in Banfield.",
     cta_primary: "Enrol 2026",
     cta_secondary: "Take a placement test",
   },
   about: {
     title: "About Us",
-    p1: "Cultural Inglesa de Banfield was born in 1968 with a simple idea: to teach real English, in the neighbourhood, for everyone. Over 58 years later, we are still doing exactly that.",
-    p2: "We are founding members of SEA, the Association of Language Centres",
-    p3: "Today we welcome the children and grandchildren of our very first students. That is the best recognition we could ever receive.",
+    p1: "Cultural Inglesa de Banfield was born in 1968 with a simple idea: to teach real English, in the neighbourhood, with the standards of a major institution and the warmth of knowing every student by name. Over 58 years later, we are still doing exactly that — now in more modern classrooms and with the technology that teaching requires today.",
+    p2: "That warmth is in the details too. Our classrooms are comfortable and air-conditioned, and equipped with computers and interactive screens that add to the dynamic of every class. A carefully looked-after environment, where small groups mean nobody gets left behind.",
+    sea: "We are founding members of SEA, the Association of Language Centres",
   },
   courses: {
     title: "Our Courses",
-    subtitle: "English for all ages and levels · 2026 classes",
-    cta: "Open enrolment 2026",
-    ninos_title: "Children (4–5 years)",
-    ninos_desc:
-      "First steps in English through songs, games and movement. A space where learning means having fun.",
-    adolescentes_title: "Teenagers",
-    adolescentes_desc:
-      "Dynamic classes that keep pace with secondary school and prepare students for international certifications.",
-    adultos_title: "Adults",
-    adultos_desc:
-      "Flexible schedules so English fits your life, not the other way around. From beginner to advanced.",
-    talleres_title: "Conversation Workshops",
-    talleres_desc:
-      "For those who want to gain fluency and confidence speaking. Oral practice in small groups.",
-    personalizados_title: "Private Lessons",
-    personalizados_desc:
-      "Your pace, your goals, your schedule. One-on-one or small group lessons tailored to you.",
+    subtitle: "English and Portuguese for all ages and levels · 2026 classes",
+    group_english: "English courses",
+    group_portuguese: "Portuguese courses",
+    kinder: {
+      name: "Kinder",
+      brief: "A first encounter with English",
+      description: [
+        "A child's first approach to a foreign language shapes the relationship they will build with it throughout the rest of their education. Our Kinder course approaches English through exploration — songs, stories, audiovisual resources and play-based activities chosen to suit each group's stage of development — so that the language is taken in naturally and meaningfully, without the formal demands of later stages.",
+      ],
+      diffs_title: "What sets our Kinder course apart",
+      diffs: [
+        "Two teachers per class. Support is decisive at this stage: having two teachers in the room makes genuine individual attention possible within the group.",
+        "Small groups. Every child has real room to take part and receive personal attention.",
+        "Play-based methodology with pedagogical grounding. Play is not an add-on but the very vehicle of learning at four and five years old.",
+        "Digital classrooms. Audiovisual resources built into the flow of every class.",
+        "Virtual campus for students and families. Marks, report cards and attendance records, plus access to supplementary study material.",
+        "A snack break. A moment that encourages socialising and helps the group bond.",
+        "No registration fee. The course is paid for by monthly instalment only.",
+      ],
+      facts:
+        "Children aged 4 and 5 · Fridays 6:00 PM to 7:30 PM · April to November · 100% in-person",
+      cta: "Reserve your child's place",
+    },
+    ninos: {
+      name: "Children",
+      brief: "From play to building the language systematically",
+      description: [
+        "Between the ages of 6 and 11, children consolidate literacy in their mother tongue and develop a remarkable capacity to take on a second language. Our Children's course makes the most of that window with two sessions a week and an approach centred on spoken communication: the aim is for students to speak English from their very first class, in a lively setting where making mistakes is a natural part of learning.",
+      ],
+      diffs_title: "What sets our Children's course apart",
+      diffs: [
+        "A focus on spoken communication. Lively classes designed so students produce language, not merely receive it.",
+        "Two one-hour classes a week. A rhythm that keeps students in contact with the language and consolidates what they learn.",
+        "Optional support classes at no extra cost. Extra help available to any student who needs it, entirely free of charge.",
+        "Final exams included. The end-of-course assessment is covered by the course fee.",
+        "Small groups. Real participation and personal follow-up for every student.",
+        "Digital classrooms. Audiovisual resources built into the flow of every class.",
+        "Virtual campus for students and families. Marks, report cards and attendance records, plus access to supplementary study material.",
+        "Free placement test. For students with prior knowledge, we establish their exact entry level at no cost.",
+        "Preparation for international exams. Available as an optional supplementary course for an additional fee.",
+      ],
+      facts:
+        "Children aged 6 to 11 · Two one-hour classes a week · March to December · 100% in-person · Annual registration fee",
+      cta: "Ask about schedules and places",
+    },
+    adolescentes: {
+      name: "Teenagers",
+      brief: "The stage where English stops being a school subject and becomes a tool",
+      description: [
+        "Between 12 and 17, English takes on a different dimension: it supports school performance, opens the door to international certifications and begins to bear on the academic and professional decisions students will make once they finish secondary school. Our Teenagers' course holds a standard to match that stage, with lively classes centred on spoken communication and a programme that reaches well beyond the classroom.",
+      ],
+      diffs_title: "What sets our Teenagers' course apart",
+      diffs: [
+        "Study trips to England. An immersion experience in the language's home country that goes far beyond a conventional course.",
+        "Extracurricular activities. Occasions that reinforce real use of the language and strengthen students' bond with the centre.",
+        "A focus on spoken communication. Students build fluency and the confidence to express themselves, not just grammatical accuracy.",
+        "Two ninety-minute classes a week. A workload suited to steady, measurable progress.",
+        "Optional support classes at no extra cost. Academic backing available when school demands are at their heaviest.",
+        "Final exams included. The end-of-course assessment is covered by the course fee.",
+        "Small groups. Personal follow-up of each student's progress.",
+        "Digital classrooms and virtual campus. Students and families consult marks, report cards and attendance records, and access supplementary study material.",
+        "Free placement test. We establish the exact entry level, at no cost.",
+        "Preparation for international exams. Available as an optional supplementary course for an additional fee.",
+      ],
+      facts:
+        "Students aged 12 to 17 · Two 90-minute classes a week · March to December · 100% in-person · Annual registration fee",
+      cta: "Request course information",
+    },
+    adultos: {
+      name: "Adults",
+      brief: "A programme with defined timescales and certification at every stage",
+      description: [
+        "Adults who decide to study English need more than good classes: they need predictability. Our adult programme is organised into ten levels of five months each, with two intakes a year — March and August — and certification of the level reached on completing each stage. From day one, students know how long their journey will take, what each stage accredits and how soon they can reach a command of the language.",
+        "The teaching approach prioritises speaking and listening, the two skills that actually get you through a job interview, a work meeting or a trip abroad.",
+      ],
+      diffs_title: "What sets our Adults' course apart",
+      diffs: [
+        "One level every five months. An intensive programme with clear objectives and measurable progress, across ten levels in total.",
+        "Two intakes a year. Courses begin in March and in August, with no need to wait for the school year to start.",
+        "Certification of the level reached. A final exam is sat on completing each level, at no extra cost, and the level achieved is certified.",
+        "Free conversation workshops. Available at every level, complementing classroom work.",
+        "In-person or online. In-person classes in the evening from 7:00 PM, online classes in the morning, and Saturdays in both modes.",
+        "Small groups. Every student gets real speaking practice in class.",
+        "A focus on speaking and listening. The skills with immediate application at work and in daily life.",
+        "Free online placement test. For students with prior knowledge. With no previous experience, entry is at Elementary A.",
+        "A single annual registration fee. Students taking two levels in the same year pay the registration fee only once.",
+      ],
+      facts:
+        "10 levels · Two 90-minute classes a week · Intakes in March and August · In-person or online",
+      cta: "Take your free placement test",
+    },
+    pt_adultos: {
+      name: "Portuguese for adults",
+      brief: "A six-level programme with certification at every stage",
+      description: [
+        "Brazil is our largest trading partner and one of the destinations Argentines choose most. Even so, many of those who travel or do business there get by in portuñol. Learning Portuguese systematically is more within reach than people tend to think — its closeness to Spanish is a considerable advantage from the outset — and a real command of the language makes a concrete difference at work, in study and in everyday life.",
+        "Our programme is organised into 6 levels of 5 months each, with a methodology centred on spoken communication: the same one we have applied to teaching English for decades.",
+      ],
+      diffs_title: "What the course includes",
+      diffs: [
+        "6 levels of 5 months. A route with a defined length and clear objectives at every stage.",
+        "Two intakes a year. Courses begin in March and in August, with no need to wait for the school year to start.",
+        "Certification of the level reached. A final exam is sat on completing each level, at no extra cost, and the level achieved is certified.",
+        "A single annual registration fee. Students taking two levels in the same year pay the registration fee only once, which means the programme can be completed in half the time without doubling that cost.",
+        "Small groups. Every student gets real speaking practice in class.",
+        "A focus on communication. Classes designed so students speak from the start, not just understand.",
+        "A schedule that fits the working day. One ninety-minute session a week, on Fridays from 7:00 PM.",
+      ],
+      facts:
+        "6 levels of 5 months · Fridays 7:00 PM to 8:30 PM · Intakes in March and August · Annual registration fee",
+      cta: "Enquire about the Portuguese course",
+    },
+    pt_adolescentes: {
+      name: "Portuguese for teenagers",
+      brief: "A second language that opens doors",
+      description: [
+        "By the age of 12, English is already a basic requirement. Portuguese, by contrast, is still a differentiator: it opens up student exchanges, university programmes in Brazil and job opportunities where the language is valued. At this age, moreover, picking it up is markedly quicker than it will be later on.",
+        "The course is organised into 6 levels of 5 months, with lively classes centred on conversation. Its closeness to Spanish makes for fast, visible progress — a decisive factor in sustaining motivation in this age group.",
+      ],
+      diffs_title: "What the course includes",
+      diffs: [
+        "6 levels of 5 months. A route with a defined length and clear objectives at every stage.",
+        "Two intakes a year. Courses begin in March and in August.",
+        "Certification of the level reached. A final exam is sat on completing each level at no extra cost, and the level achieved is certified.",
+        "A single annual registration fee. Students taking two levels in the same year pay the registration fee only once, and can complete the programme in half the time.",
+        "Small groups. Real participation and personal follow-up for every student.",
+        "A focus on spoken communication. The aim is for students to speak from their very first classes, fluently and without fear of making mistakes.",
+        "A schedule that fits school life. One session a week on Fridays, with no clash with school or weekend activities.",
+      ],
+      facts:
+        "Students aged 12 to 17 · 6 levels of 5 months · Fridays 5:30 PM to 7:00 PM · Intakes in March and August · Annual registration fee",
+      cta: "Request course information",
+    },
   },
   schedule: {
     title: "2026 Schedule",
@@ -200,6 +420,25 @@ const en: typeof es = {
     tab_adultos: "Adults",
     tab_conversacion: "Conversation",
   },
+  enrollment: {
+    title: "Enrolling is simple: four steps and you are in class",
+    subtitle:
+      "Our administrative team supports you at every stage of the process, from your first enquiry to the start of classes.",
+    step1_title: "Message us on WhatsApp",
+    step1_desc:
+      "Tell us which course you are interested in. If you already have some English, we arrange a free placement test to pinpoint your entry level.",
+    step2_title: "You get all the information",
+    step2_desc:
+      "We send you the full course details: available schedules, duration, fees and study materials, so you can decide with everything in front of you.",
+    step3_title: "You complete the enrolment form",
+    step3_desc:
+      "A short form with the student's details. Our team helps you with whatever you need.",
+    step4_title: "You pay the registration fee",
+    step4_desc:
+      "Paid once a year, when it applies according to the course. With this step, your place is confirmed.",
+    closing: "And you are all set to start your classes.",
+    cta: "Enquire on WhatsApp",
+  },
   campus: {
     title: "Campus Nube",
     desc: "Campus Nube is the exclusive platform for Cultural Inglesa de Banfield students. Access study materials, report cards and exam results.",
@@ -209,32 +448,6 @@ const en: typeof es = {
     cta: "Access the Campus",
     cta_sub: "Exclusive platform for students",
   },
-  blog: {
-    title: "News",
-    subtitle: "The latest from our community",
-    gallery_title: "Gallery",
-    instagram_cta: "Follow us on Instagram",
-  },
-  blog_posts: [
-    {
-      date: "March 2026",
-      title: "2026 Enrolment Now Open!",
-      excerpt:
-        "You can now enrol in all our courses for children, teenagers and adults. Ask about schedules and availability.",
-    },
-    {
-      date: "February 2026",
-      title: "New online conversation schedules",
-      excerpt:
-        "We've added conversation classes on Saturday mornings and Tuesday evenings. Perfect for practising from home.",
-    },
-    {
-      date: "April 2026",
-      title: "58 years shaping generations",
-      excerpt:
-        "Since 1968, Cultural Inglesa de Banfield has accompanied whole families on their English journey. Today we welcome the grandchildren of our first students.",
-    },
-  ] as BlogPost[],
   contact: {
     title: "Contact Us",
     subtitle: "Any questions? We're happy to help.",
@@ -264,6 +477,8 @@ const en: typeof es = {
     hours: "Monday to Thursday: 2:30 PM to 9:00 PM · Friday: 4:30 PM to 8:30 PM · Saturday: 9:30 AM to 1:30 PM",
     address: "Maipú 387, Banfield, Buenos Aires",
     maps_link: "View on Google Maps",
+    institutional:
+      "Cultural Inglesa de Banfield · Since 1968 · Members of SEA (Association of Language Centres)",
     copyright:
       "© 2026 Cultural Inglesa de Banfield. All rights reserved.",
   },

@@ -4,11 +4,11 @@ import { useLanguage } from "@/i18n/LanguageContext";
 export default function AboutSection() {
   const { t } = useLanguage();
 
-  // Split p2 around "SEA" to inject a link
-  const p2 = t("about.p2");
-  const seaIndex = p2.indexOf("SEA");
-  const p2Before = seaIndex >= 0 ? p2.slice(0, seaIndex) : p2;
-  const p2After = seaIndex >= 0 ? p2.slice(seaIndex + 3) : "";
+  // Se parte la línea de SEA para inyectar el link
+  const sea = t("about.sea");
+  const seaIndex = sea.indexOf("SEA");
+  const seaBefore = seaIndex >= 0 ? sea.slice(0, seaIndex) : sea;
+  const seaAfter = seaIndex >= 0 ? sea.slice(seaIndex + 3) : "";
 
   return (
     <section id="nosotros" className="py-20 lg:py-28">
@@ -26,8 +26,9 @@ export default function AboutSection() {
           <h2 className="text-3xl sm:text-4xl font-bold text-navy">{t("about.title")}</h2>
           <div className="w-16 h-1 bg-secondary rounded-full" />
           <p className="text-muted-foreground leading-relaxed text-base">{t("about.p1")}</p>
-          <p className="text-muted-foreground leading-relaxed text-base">
-            {p2Before}
+          <p className="text-muted-foreground leading-relaxed text-base">{t("about.p2")}</p>
+          <p className="leading-relaxed text-base font-medium text-foreground/80">
+            {seaBefore}
             <a
               href="https://www.idiomas.org.ar"
               target="_blank"
@@ -36,10 +37,7 @@ export default function AboutSection() {
             >
               SEA
             </a>
-            {p2After}
-          </p>
-          <p className="text-muted-foreground leading-relaxed text-base font-medium text-foreground/80">
-            {t("about.p3")}
+            {seaAfter}
           </p>
         </div>
       </div>

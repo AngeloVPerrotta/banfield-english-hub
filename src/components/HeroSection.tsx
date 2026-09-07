@@ -1,18 +1,15 @@
+import { useEffect, useState } from "react";
 import { images } from "@/config/images";
 import { useLanguage } from "@/i18n/LanguageContext";
 
+const slides = images.hero.carousel;
+const AUTOPLAY_MS = 5000;
+const FADE_MS = 800;
+
 const heroStyles = `
-  @keyframes kenburns {
-    0%   { transform: scale(1) translate(0, 0); }
-    50%  { transform: scale(1.15) translate(-2%, -1%); }
-    100% { transform: scale(1) translate(0, 0); }
-  }
   @keyframes fadeSlideUp {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-img {
-    animation: kenburns 20s ease-in-out infinite;
   }
   .hero-text {
     animation: fadeSlideUp 0.8s ease-out both;
@@ -20,46 +17,82 @@ const heroStyles = `
   .hero-buttons {
     animation: fadeSlideUp 0.8s ease-out 0.3s both;
   }
+  .hero-slide {
+    transition: opacity ${FADE_MS}ms ease-in-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide { transition-duration: 0ms; }
+  }
 `;
 
 export default function HeroSection() {
   const { t } = useLanguage();
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  // Las 6 fotos caen dentro del viewport, así que loading="lazy" no las
+  // diferiría: se montan sólo las ya vistas más la siguiente, para no bajar
+  // ~1,4 MB de imágenes en la carga inicial.
+  const [mounted, setMounted] = useState(2);
+  useEffect(() => {
+    setMounted((n) => Math.max(n, Math.min(slides.length, index + 2)));
+  }, [index]);
+
+  // Autoplay en loop. El timer se reinicia con cada cambio de foto,
+  // así un click en los dots también reinicia la cuenta de 5s.
+  useEffect(() => {
+    if (paused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setTimeout(
+      () => setIndex((i) => (i + 1) % slides.length),
+      AUTOPLAY_MS
+    );
+    return () => window.clearTimeout(id);
+  }, [index, paused]);
 
   return (
-    <section id="inicio" className="relative min-h-[90vh] flex items-center bg-navy overflow-hidden">
+    <section
+      id="inicio"
+      className="relative min-h-[90vh] flex items-center bg-navy overflow-hidden"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <style>{heroStyles}</style>
 
-      {/* Background image */}
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={images.hero}
-          alt="Pasillo de la Cultural Inglesa de Banfield decorado para su aniversario"
-          className="hero-img w-full h-full object-cover object-[center_30%]"
-          loading="eager"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(27,58,92,0.85) 0%, rgba(27,58,92,0.55) 60%, rgba(27,58,92,0.3) 100%)",
-          }}
-        />
+      {/* Carrusel: fondo a sangre en mobile, columna derecha (45%) en desktop */}
+      <div className="absolute inset-0 lg:left-[55%]">
+        {slides.slice(0, mounted).map((slide, i) => (
+          <img
+            key={slide.src}
+            src={slide.src}
+            alt={slide.alt}
+            aria-hidden={i !== index}
+            className="hero-slide absolute inset-0 w-full h-full object-cover object-[center_30%] lg:object-center"
+            style={{ opacity: i === index ? 1 : 0 }}
+            loading="eager"
+            decoding="async"
+          />
+        ))}
+
+        {/* Mobile: overlay azul al 70% para que el texto se lea encima */}
+        <div className="absolute inset-0 bg-navy/70 lg:hidden" />
+
+        {/* Desktop: empalme suave contra la columna de texto */}
+        <div className="hidden lg:block absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-navy to-transparent" />
       </div>
 
-      {/* Content */}
+      {/* Contenido */}
       <div className="container relative z-10 py-20 lg:py-32">
-        <div className="max-w-2xl space-y-6">
+        <div className="max-w-2xl lg:max-w-[46%] space-y-6">
           <div className="hero-text">
             <p className="text-gold font-semibold tracking-widest uppercase text-xs mb-6">
               {t("hero.badge")}
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] text-white">
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold leading-[1.08] text-white">
               {t("hero.title")}
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-white/80 max-w-lg leading-relaxed">
-              {t("hero.subtitle1")}{" "}
-              <br className="hidden sm:block" />
-              <span className="font-medium text-white/95">{t("hero.subtitle2")}</span>
+              {t("hero.subtitle")}
             </p>
           </div>
           <div className="hero-buttons flex flex-wrap gap-4 pt-2">
@@ -83,8 +116,28 @@ export default function HeroSection() {
         </div>
       </div>
 
+      {/* Dots del carrusel — el offset deja libre la ola separadora (alto = 4.17vw) */}
+      <div className="pointer-events-none absolute z-30 bottom-[max(2.5rem,5vw)] lg:bottom-[max(5.5rem,5vw)] left-0 right-0 lg:left-[55%] flex justify-center gap-1">
+        {slides.map((slide, i) => (
+          <button
+            key={slide.src}
+            type="button"
+            onClick={() => setIndex(i)}
+            aria-label={`Ver foto ${i + 1} de ${slides.length}`}
+            aria-current={i === index}
+            className="pointer-events-auto p-2"
+          >
+            <span
+              className={`block w-2 h-2 rounded-full transition-colors duration-300 ${
+                i === index ? "bg-gold" : "bg-white/40"
+              }`}
+            />
+          </button>
+        ))}
+      </div>
+
       {/* Wave separator */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0 z-20">
         <svg viewBox="0 0 1440 60" fill="none" className="w-full h-auto block">
           <path d="M0 60V20C360 0 720 40 1080 20C1260 10 1380 30 1440 20V60H0Z" fill="hsl(0 0% 100%)" />
         </svg>

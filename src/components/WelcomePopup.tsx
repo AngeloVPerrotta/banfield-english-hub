@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { images } from "@/config/images";
 
+// Pop-up desactivado (ver Index.tsx). La pieza de "Inscripciones Elementary"
+// se eliminó junto con la sección de Novedades, así que la imagen apunta a
+// popup-kinder.jpg como reserva. Al reactivarlo hay que reemplazar la imagen,
+// su alt y WHATSAPP_URL por la campaña vigente.
 const SESSION_KEY = "cib_popup_shown";
 const WHATSAPP_URL =
   "https://wa.me/5491136693725?text=Hola!%20Me%20interesa%20inscribirme%20en%20el%20curso%20Elementary%20para%20adultos";
@@ -84,7 +88,7 @@ export default function WelcomePopup() {
             className="block cursor-pointer border-0 bg-transparent p-0"
           >
             <img
-              src={images.popup.inscripciones}
+              src={images.popup.kinder}
               alt="Inscripciones abiertas"
               className="popup-img rounded-2xl shadow-2xl"
               draggable={false}

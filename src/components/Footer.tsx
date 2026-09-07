@@ -9,8 +9,8 @@ export default function Footer() {
     { label: t("nav.inicio"), href: "/#inicio" },
     { label: t("nav.cursos"), href: "/#cursos" },
     { label: t("nav.horarios"), href: "/#horarios" },
+    { label: t("nav.inscripcion"), href: "/#inscripcion" },
     { label: t("nav.campus"), href: "/#campus" },
-    { label: t("nav.novedades"), href: "/#novedades" },
     { label: t("nav.contacto"), href: "/#contacto" },
   ];
 
@@ -98,9 +98,14 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-primary-foreground/10">
-        <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-primary-foreground/40">
-          <span>{t("footer.copyright")}</span>
-          <span>{t("footer.address")}</span>
+        <div className="container py-5 space-y-3 text-xs text-primary-foreground/40">
+          <p className="text-center text-primary-foreground/60">
+            {t("footer.institutional")}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+            <span>{t("footer.copyright")}</span>
+            <span>{t("footer.address")}</span>
+          </div>
         </div>
       </div>
     </footer>

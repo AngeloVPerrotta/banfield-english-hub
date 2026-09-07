@@ -5,6 +5,7 @@ type LanguageContextType = {
   lang: Lang;
   setLang: (l: Lang) => void;
   t: (key: string) => string;
+  tList: (key: string) => string[];
 };
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
@@ -20,19 +21,28 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("cib_lang", l);
   };
 
-  const t = (key: string): string => {
-    const keys = key.split(".");
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let value: any = translations[lang];
-    for (const k of keys) {
-      if (value == null) return key;
-      value = value[k];
+  const resolve = (key: string): unknown => {
+    let value: unknown = translations[lang];
+    for (const k of key.split(".")) {
+      if (value === null || typeof value !== "object") return undefined;
+      value = (value as Record<string, unknown>)[k];
     }
+    return value;
+  };
+
+  const t = (key: string): string => {
+    const value = resolve(key);
     return typeof value === "string" ? value : key;
   };
 
+  // Para las claves que guardan listas (párrafos, diferenciales de cada curso).
+  const tList = (key: string): string[] => {
+    const value = resolve(key);
+    return Array.isArray(value) ? (value as string[]) : [];
+  };
+
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider value={{ lang, setLang, t, tList }}>
       {children}
     </LanguageContext.Provider>
   );
