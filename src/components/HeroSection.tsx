@@ -28,7 +28,6 @@ const heroStyles = `
 export default function HeroSection() {
   const { t } = useLanguage();
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   // Las 6 fotos caen dentro del viewport, así que loading="lazy" no las
   // diferiría: se montan sólo las ya vistas más la siguiente, para no bajar
@@ -41,21 +40,18 @@ export default function HeroSection() {
   // Autoplay en loop. El timer se reinicia con cada cambio de foto,
   // así un click en los dots también reinicia la cuenta de 5s.
   useEffect(() => {
-    if (paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setTimeout(
       () => setIndex((i) => (i + 1) % slides.length),
       AUTOPLAY_MS
     );
     return () => window.clearTimeout(id);
-  }, [index, paused]);
+  }, [index]);
 
   return (
     <section
       id="inicio"
       className="relative min-h-[90vh] flex items-center bg-navy overflow-hidden"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
     >
       <style>{heroStyles}</style>
 

@@ -32,6 +32,7 @@ const es = {
     subtitle: "Inglés y portugués para todas las edades y niveles · Clases 2026",
     group_english: "Cursos de inglés",
     group_portuguese: "Cursos de portugués",
+    enroll_link: "¿Cómo me inscribo?",
     kinder: {
       name: "Kinder",
       brief: "El primer encuentro con el inglés",
@@ -274,6 +275,7 @@ const en: typeof es = {
     subtitle: "English and Portuguese for all ages and levels · 2026 classes",
     group_english: "English courses",
     group_portuguese: "Portuguese courses",
+    enroll_link: "How do I enrol?",
     kinder: {
       name: "Kinder",
       brief: "A first encounter with English",

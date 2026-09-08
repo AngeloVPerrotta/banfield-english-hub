@@ -67,7 +67,6 @@ const scheduleData: Record<string, ScheduleItem[]> = {
     { curso: "FCE para adultos", dias: "Sábados", horario: "11:30 a 13:30" },
   ],
   "Conversación": [
-    { curso: "Nivel Básico (online)", dias: "Sábados", horario: "9:30 a 11:00" },
     { curso: "Nivel Avanzado (online)", dias: "Martes", horario: "19:00 a 20:30" },
   ],
 };

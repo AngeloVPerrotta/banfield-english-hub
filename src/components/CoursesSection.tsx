@@ -139,6 +139,16 @@ export default function CoursesSection() {
           <CourseGroup heading={t("courses.group_english")} courses={englishCourses} />
           <CourseGroup heading={t("courses.group_portuguese")} courses={portugueseCourses} />
         </div>
+
+        {/* Link discreto: no compite con el CTA de cada tarjeta */}
+        <div className="text-center mt-12 reveal">
+          <a
+            href="/#inscripcion"
+            className="text-sm font-medium text-gold hover:underline"
+          >
+            {t("courses.enroll_link")} →
+          </a>
+        </div>
       </div>
     </section>
   );
